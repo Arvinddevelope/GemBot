@@ -1,0 +1,185 @@
+{
+  "project_info": {
+    "project_number": "884691382493",
+    "firebase_url": "https://finsathi-68884-default-rtdb.firebaseio.com",
+    "project_id": "finsathi-68884",
+    "storage_bucket": "finsathi-68884.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884691382493:android:1efd46d38144b015c1ab34",
+        "android_client_info": {
+          "package_name": "com.arvind.easykhata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJz5JBmYeShhBBt_tUf5oWS4-v31fWhPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884691382493:android:f49cbc759bd9a901c1ab34",
+        "android_client_info": {
+          "package_name": "com.technohub.zone.bluetrackadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJz5JBmYeShhBBt_tUf5oWS4-v31fWhPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884691382493:android:5ea7220e697be228c1ab34",
+        "android_client_info": {
+          "package_name": "com.technohub.zone.catchleads"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJz5JBmYeShhBBt_tUf5oWS4-v31fWhPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884691382493:android:2738442e4b69dc8ec1ab34",
+        "android_client_info": {
+          "package_name": "com.technohub.zone.gembot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJz5JBmYeShhBBt_tUf5oWS4-v31fWhPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884691382493:android:10450f160f453dc9c1ab34",
+        "android_client_info": {
+          "package_name": "com.technohub.zone.inspireai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJz5JBmYeShhBBt_tUf5oWS4-v31fWhPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884691382493:android:8abf4611f708865cc1ab34",
+        "android_client_info": {
+          "package_name": "com.technohub.zone.moneymap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJz5JBmYeShhBBt_tUf5oWS4-v31fWhPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884691382493-l3og8dr4tg618eonin49j8ks0qefklpo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
