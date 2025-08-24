@@ -1,74 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@color/background"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:background="@color/settings_screen_background"
     android:gravity="center_horizontal">
 
     <!-- Header -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:textSize="24sp"
+        android:text="@string/settings_title_header"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/settings_text_primary"
         android:gravity="center"
         android:layout_marginBottom="32dp" />
 
-    <!-- Dark Mode Switch -->
+    <!-- Dark Mode Setting Item -->
     <LinearLayout
+        android:id="@+id/containerDarkMode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="@drawable/settings_item_bg"
+        android:background="@drawable/settings_item_background_shape"
         android:padding="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground">
 
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_dark_mode"
+            app:tint="@color/settings_icon_tint"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/cd_dark_mode_icon"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Dark Mode"
+            android:text="@string/settings_dark_mode"
             android:textSize="18sp"
-            android:textColor="@color/primary_text" />
+            android:textColor="@color/settings_text_primary" />
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/switchTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <!-- Edit Profile -->
+    <!-- Edit Profile Setting Item -->
+    <LinearLayout
+        android:id="@+id/containerEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/settings_item_background_shape"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
 
-    <!-- Notification Settings -->
-    <TextView
-        android:id="@+id/txtEditProfile"
-        style="@style/SettingsItemStyle"
-        android:text="Edit Profile" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_edit_profile"
+            app:tint="@color/settings_icon_tint"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/cd_edit_profile_icon"/>
 
-    <TextView
-        android:id="@+id/txtNotificationSettings"
-        style="@style/SettingsItemStyle"
-        android:text="Notification Settings" />
+        <TextView
+            android:id="@+id/txtEditProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/settings_edit_profile"
+            android:textSize="18sp"
+            android:textColor="@color/settings_text_primary" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/settings_chevron_tint"
+            android:contentDescription="@string/cd_navigate_icon"/>
+    </LinearLayout>
+
+    <!-- Notification Settings Item -->
+    <LinearLayout
+        android:id="@+id/containerNotificationSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/settings_item_background_shape"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_notifications"
+            app:tint="@color/settings_icon_tint"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/cd_notifications_icon"/>
+
+        <TextView
+            android:id="@+id/txtNotificationSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/settings_notification_settings"
+            android:textSize="18sp"
+            android:textColor="@color/settings_text_primary" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/settings_chevron_tint"
+            android:contentDescription="@string/cd_navigate_icon"/>
+    </LinearLayout>
+
+    <!-- Spacer to push logout button down if content is short -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <!-- Logout Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textColor="@android:color/white"
+        android:text="@string/settings_logout"
+        android:textColor="@color/settings_logout_text"
         android:textSize="16sp"
-        android:backgroundTint="@color/primary"
+        app:backgroundTint="@color/settings_logout_button_background"
+        app:iconTint="@color/settings_logout_text"
+        app:iconGravity="textStart"
+        app:cornerRadius="24dp"
+        android:paddingVertical="14dp"
         android:layout_marginTop="32dp"
-        android:paddingVertical="12dp" />
+        android:layout_marginBottom="16dp"/>
 
 </LinearLayout>

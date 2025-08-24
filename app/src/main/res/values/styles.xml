@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Style for settings list items -->
     <style name="SettingsItemStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -13,4 +15,55 @@
         <item name="android:foreground">?attr/selectableItemBackground</item>
     </style>
 
+    <!-- Card style for feature prompt cards -->
+    <style name="FeaturePromptCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">12dp</item>
+
+    </style>
+
+    <!-- Layout inside each feature prompt card -->
+    <style name="FeaturePromptLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- Icon style for prompt cards -->
+    <style name="FeaturePromptIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <!-- Text style for prompt cards -->
+    <style name="FeaturePromptText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+    </style>
+
+    <!-- App Theme (ensure it's M3 or inherits from it) -->
+    <!-- <style name="App.Theme.GemBot" parent="Theme.Material3.DayNight.NoActionBar"> ... </style> -->
+
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Define textInputOutlinedStyle in your theme or here -->
+    <!-- Example if not using full M3 theme attributes directly for styles -->
+    <style name="MyTextInputLayoutOutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <!-- Add other attributes like boxStrokeColor, hintTextColor etc. -->
+    </style>
 </resources>

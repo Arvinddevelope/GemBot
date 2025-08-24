@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
             if (mAuth.getCurrentUser() != null) {
-                startActivity(new Intent(SplashActivity.this, ChatActivity.class));
+                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
             } else {
                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
             }

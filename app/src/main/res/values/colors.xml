@@ -19,4 +19,45 @@
     <color name="secondary_text">#757575</color> <!-- Medium Gray -->
     <color name="card_bg">#F5F5F5</color>
     <color name="background">#FFFFFF</color>
+
+    <!-- Settings Screen Specific Colors -->
+    <color name="settings_screen_background">#F0F2F5</color> <!-- Light greyish background -->
+    <color name="settings_text_primary">#212121</color> <!-- Dark text for titles and main content -->
+    <color name="settings_icon_tint">#5E6572</color> <!-- Neutral icon tint for settings items -->
+    <color name="settings_chevron_tint">#757575</color> <!-- Lighter tint for navigation chevrons -->
+    <color name="settings_item_bg_color">#FFFFFF</color> <!-- White background for individual settings items -->
+
+    <color name="settings_logout_text">#FFFFFF</color> <!-- Text color for the logout button -->
+    <color name="settings_logout_button_background">#D32F2F</color> <!-- A common error/warning red for logout -->
+
+    <!-- General App Theme Colors (Examples - Replace with your actual app theme colors if they differ) -->
+    <color name="colorPrimary">#1976D2</color> <!-- Your app's primary branding color -->
+    <color name="colorPrimaryDark">#004BA0</color> <!-- A darker shade of your primary color, for status bar etc. -->
+    <color name="colorAccent">#FF4081</color> <!-- Your app's accent color, for interactive elements -->
+
+
+    <color name="divider_color">#BDBDBD</color> <!-- A general purpose divider color -->
+
+    <!-- You can add more specific colors as needed by your app's theme -->
+    <!-- For example, colors for different states (pressed, disabled) or specific components -->
+
+
+    <color name="home_background_color">#F8F9FA</color> <!-- Light, clean background -->
+    <color name="text_primary_dark">#202124</color> <!-- For dark text on light backgrounds -->
+    <color name="text_secondary_dark">#5F6368</color>
+    <color name="card_background_light">#FFFFFF</color>
+
+    <color name="profile_image_stroke_color">@color/primary</color>
+    <color name="primary_basic">#3F51B5</color> <!-- Example: Indigo -->
+    <color name="white_basic">#FFFFFF</color>
+    <color name="home_background_color_basic">#EEEEEE</color> <!-- Light Grey -->
+    <color name="simple_card_background_basic">#FFFFFF</color>
+    <color name="text_primary_basic">#212121</color> <!-- Almost Black -->
+    <color name="text_secondary_basic">#757575</color> <!-- Grey -->
+    <color name="icon_tint_basic">#616161</color> <!-- Darker Grey for icons -->
+    <color name="simple_item_background_basic">#FAFAFA</color> <!-- Very Light Grey -->
+    <color name="simple_item_background_subtle_basic">#F0F0F0</color> <!-- Slightly darker for prompts -->
+
+    <!-- For Material 3 attributes like colorSurface, colorOnSurface etc.
+         ensure your app theme (e.g., Theme.Material3.DayNight.NoActionBar) is set in themes.xml -->
 </resources>

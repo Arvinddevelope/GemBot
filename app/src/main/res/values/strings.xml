@@ -1,3 +1,51 @@
 <resources>
     <string name="app_name">GemBot</string>
+    <string name="cd_back_button">Back</string>
+    <string name="placeholder_user_name">User Name</string> <!-- Or fetch dynamically -->
+    <string name="hint_type_message">Type your message…</string>
+    <string name="cd_open_camera">Open Camera</string>
+    <string name="cd_send_message">Send message</string>
+
+    <!-- ... other strings ... -->
+    <string name="settings_title_header">Settings</string>
+    <string name="settings_dark_mode">Dark Mode</string>
+    <string name="settings_edit_profile">Edit Profile</string>
+    <string name="settings_notification_settings">Notification Settings</string>
+    <string name="settings_logout">Logout</string>
+
+    <string name="cd_dark_mode_icon">Dark mode icon</string>
+    <string name="cd_edit_profile_icon">Edit profile icon</string>
+    <string name="cd_notifications_icon">Notifications icon</string>
+    <string name="cd_navigate_icon">Navigate</string>
+
+    <string name="app_name_gembot">GemBot</string>
+    <string name="cd_app_logo">App Logo</string>
+    <string name="cd_settings">Settings</string>
+
+    <string name="home_welcome_title">Welcome to GemBot!</string>
+    <string name="home_welcome_subtitle">Your intelligent assistant for instant answers and creative ideas. Tap the chat button to begin your journey!</string>
+
+    <string name="home_features_title">Discover What GemBot Can Do</string>
+    <string name="home_feature_1">• Get instant, accurate answers to your questions.</string>
+    <string name="home_feature_2">• Explore creative ideas and insightful suggestions.</string>
+    <string name="home_feature_3">• Enjoy a simple, intuitive, and engaging chat interface.</string>
+    <string name="cd_feature_answers">Feature: Answers</string>
+    <string name="cd_feature_ideas">Feature: Ideas</string>
+    <string name="cd_feature_chat">Feature: Chat Interface</string>
+
+    <string name="home_prompts_title">Try Asking GemBot</string>
+    <string name="home_prompt_1">Try asking me about todays news</string>
+    <string name="home_prompt_2">Help me write a bedtime story</string>
+    <string name="home_prompt_3">Plan a meal for the week</string>
+    <string name="cd_prompt_suggestion">Prompt suggestion</string>
+
+    <string name="home_start_chat_button">Start Chat</string>
+
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="cd_profile_image">Profile Image</string>
+    <string name="edit_profile_change_photo">Change Photo</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="button_save_changes">Save Changes</string>
 </resources>

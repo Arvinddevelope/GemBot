@@ -19,20 +19,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Initialize views
+        // Bind UI elements
         btnSettings = findViewById(R.id.btnSettings);
         btnStartChat = findViewById(R.id.btnStartChat);
 
-        // Settings icon click -> open SettingsActivity
+        // Open settings page
         btnSettings.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this, SettingsActivity.class));
         });
 
-        // Start Chat button click -> Open ChatActivity
+        // Open chat page
         btnStartChat.setOnClickListener(v -> {
-            Intent chatIntent = new Intent(HomeActivity.this, ChatActivity.class);
-            startActivity(chatIntent);
+            startActivity(new Intent(this, ChatActivity.class));
         });
     }
 }

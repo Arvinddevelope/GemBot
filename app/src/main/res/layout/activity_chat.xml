@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background">
 
     <!-- 🔹 Top Bar with User Name -->
@@ -23,18 +23,22 @@
             android:layout_height="24dp"
             android:src="@android:drawable/ic_menu_revert"
             app:tint="@android:color/white"
-            android:contentDescription="Back"
-            android:padding="4dp"/>
+            android:contentDescription="@string/cd_back_button"
+            android:padding="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
         <TextView
             android:id="@+id/userNameTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="User Name"
+            android:layout_weight="1"
+            android:text="@string/placeholder_user_name"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:layout_marginStart="12dp"/>
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"/>
+
     </LinearLayout>
 
     <!-- 🔹 Chat Messages -->
@@ -44,7 +48,9 @@
         android:layout_height="match_parent"
         android:layout_below="@id/chatHeader"
         android:layout_above="@id/messageBox"
-        android:padding="12dp"/>
+        android:background="@drawable/chat_messages_background"
+        android:padding="12dp"
+        android:clipToPadding="false"/>
 
     <!-- 🔹 Message Input Box -->
     <LinearLayout
@@ -52,30 +58,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/cardBg"
+        android:background="@drawable/bg_message_input_box"
         android:orientation="horizontal"
-        android:padding="8dp"
-        android:elevation="4dp">
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:elevation="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="16dp">
 
         <EditText
             android:id="@+id/editMessage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Type your message..."
-            android:padding="12dp"
+            android:hint="@string/hint_type_message"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:background="@drawable/edittext_bg"
             android:textColor="@color/primary_text"
-            android:textColorHint="@color/secondary_text" />
+            android:textColorHint="@color/secondary_text"
+            android:layout_marginEnd="8dp"
+            android:maxLines="4" />
 
+        <ImageButton
+            android:id="@+id/btnCamera"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_camera"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/primary"
+            android:padding="10dp"
+            android:contentDescription="@string/cd_open_camera"
+            android:layout_marginEnd="4dp"/>
 
         <ImageButton
             android:id="@+id/btnSend"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@android:drawable/ic_menu_send"
-            android:backgroundTint="@color/primary"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/primary"
+            android:padding="10dp"
+            android:contentDescription="@string/cd_send_message"/>
     </LinearLayout>
 
 </RelativeLayout>

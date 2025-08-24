@@ -6,9 +6,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,10 +33,10 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
-    private ImageView imgProfile;
+    private ShapeableImageView imgProfile;
     private TextView txtChangePhoto;
     private TextInputEditText edtFullName, edtEmail, edtPhone;
-    private Button btnSave;
+    private MaterialButton btnSave;
 
     private FirebaseAuth auth;
     private FirebaseUser currentUser;
@@ -66,11 +65,18 @@ public class EditProfileActivity extends AppCompatActivity {
         edtPhone = findViewById(R.id.edtPhone);
         btnSave = findViewById(R.id.btnSave);
 
+        // Progress dialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Saving...");
 
-        // Load current user data
+        if (currentUser == null) {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+
+        // Load user profile data
         loadUserProfile();
 
         // Change photo click
@@ -81,32 +87,29 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private void loadUserProfile() {
-        if (currentUser == null) return;
-
-        // Load email
         edtEmail.setText(currentUser.getEmail());
 
-        // Load name and photo from Firestore
         DocumentReference userRef = firestore.collection("users").document(currentUser.getUid());
-        userRef.get().addOnSuccessListener(documentSnapshot -> {
-            if (documentSnapshot.exists()) {
-                edtFullName.setText(documentSnapshot.getString("name"));
-                edtPhone.setText(documentSnapshot.getString("phone"));
+        userRef.get()
+                .addOnSuccessListener(snapshot -> {
+                    if (snapshot.exists()) {
+                        edtFullName.setText(snapshot.getString("name"));
+                        edtPhone.setText(snapshot.getString("phone"));
 
-                String photoUrl = documentSnapshot.getString("photoUrl");
-                if (photoUrl != null && !photoUrl.isEmpty()) {
-                    Glide.with(this).load(photoUrl).into(imgProfile);
-                }
-            }
-        }).addOnFailureListener(e ->
-                Toast.makeText(this, "Failed to load profile", Toast.LENGTH_SHORT).show()
-        );
+                        String photoUrl = snapshot.getString("photoUrl");
+                        if (photoUrl != null && !photoUrl.isEmpty()) {
+                            Glide.with(this).load(photoUrl).into(imgProfile);
+                        }
+                    }
+                })
+                .addOnFailureListener(e ->
+                        Toast.makeText(this, "Failed to load profile", Toast.LENGTH_SHORT).show()
+                );
     }
 
     private void openImagePicker() {
-        Intent intent = new Intent();
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
@@ -119,14 +122,14 @@ public class EditProfileActivity extends AppCompatActivity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImageUri);
                 imgProfile.setImageBitmap(bitmap);
             } catch (IOException e) {
-                e.printStackTrace();
+                Toast.makeText(this, "Failed to load image", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void saveProfile() {
-        String name = edtFullName.getText().toString().trim();
-        String phone = edtPhone.getText().toString().trim();
+        String name = edtFullName.getText() != null ? edtFullName.getText().toString().trim() : "";
+        String phone = edtPhone.getText() != null ? edtPhone.getText().toString().trim() : "";
 
         if (name.isEmpty()) {
             edtFullName.setError("Enter full name");
@@ -143,22 +146,19 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private void uploadProfilePhoto(String name, String phone) {
-        String fileName = "profile_images/" + UUID.randomUUID().toString();
+        String fileName = "profile_images/" + UUID.randomUUID();
         StorageReference ref = storageReference.child(fileName);
 
         ref.putFile(selectedImageUri)
-                .addOnSuccessListener(taskSnapshot ->
-                        ref.getDownloadUrl().addOnSuccessListener(uri ->
-                                updateProfileData(name, phone, uri.toString())
-                        )
-                )
+                .addOnSuccessListener(task -> ref.getDownloadUrl()
+                        .addOnSuccessListener(uri -> updateProfileData(name, phone, uri.toString())))
                 .addOnFailureListener(e -> {
                     progressDialog.dismiss();
                     Toast.makeText(this, "Image upload failed", Toast.LENGTH_SHORT).show();
                 });
     }
 
-    private void updateProfileData(String name, String phone, String photoUrl) {
+    private void updateProfileData(String name, String phone, @Nullable String photoUrl) {
         Map<String, Object> updates = new HashMap<>();
         updates.put("name", name);
         updates.put("phone", phone);
@@ -170,7 +170,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 .update(updates)
                 .addOnSuccessListener(unused -> {
                     progressDialog.dismiss();
-                    Toast.makeText(this, "Profile updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
                     finish();
                 })
                 .addOnFailureListener(e -> {

@@ -1,19 +1,23 @@
 package com.technohub.zone.gembot.models;
 
+/**
+ * MessageModel represents a single chat message.
+ * It can be used for storing/retrieving messages from Firebase.
+ */
 public class MessageModel {
-    private String sender;
-    private String message;
-    private long timestamp;
+    private String sender;    // "user" or "bot"
+    private String message;   // Message text
+    private long timestamp;   // Time of the message in milliseconds
 
-    // Constructor
+    // Empty constructor required for Firebase deserialization
+    public MessageModel() {
+    }
+
+    // Constructor with parameters
     public MessageModel(String sender, String message, long timestamp) {
         this.sender = sender;
         this.message = message;
         this.timestamp = timestamp;
-    }
-
-    // Empty constructor (needed for Firebase or serialization)
-    public MessageModel() {
     }
 
     // Getters
